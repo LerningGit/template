@@ -24,7 +24,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         
-        #
+      - name: Install pre-commit
+        run: pip install pre-commit
+        
+      - name: Set up pre-commit
+        run: pre-commit install --install-hooks
 
       - name: Format Terraform files
         run: terraform fmt -recursive
