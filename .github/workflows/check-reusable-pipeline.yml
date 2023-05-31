@@ -1,0 +1,36 @@
+name: Check Reusable Pipeline
+on:
+  push:
+    branches:
+      - main
+      
+permissions:
+  contents: read
+  actions: read
+  security-events: write
+  
+jobs:
+  validate-and-run-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Validate Reusable Pipeline
+        run: |
+          # Add commands or actions to validate the structure or behavior of the reusable pipeline
+          # Example: Check if the reusable pipeline file exists
+          if [[ ! -f ".github/workflows/action.yml" ]]; then
+            echo "Reusable pipeline file '.github/workflows/action.yml' does not exist."
+            exit 1
+          fi
+          
+          # Perform other validation or testing tasks as needed
+          ls -l
+          
+      - name: Run Reusable Pipeline
+        run: |
+          # Add commands or actions to run the reusable pipeline
+          # Replace the placeholder with the actual command or action
+          echo "Running the reusable pipeline"
