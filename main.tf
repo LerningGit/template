@@ -13,9 +13,9 @@ resource "aws_instance" "example" {
 #    http_tokens = "required"
 #  }
   
-#  root_block_device {
-#    encrypted = true
-#  }
+  root_block_device {
+    encrypted = true
+  }
   
   ebs_optimized = true
   
