@@ -9,13 +9,13 @@ resource "aws_instance" "example" {
   instance_type = "t2.micro"
   monitoring = true
 
-  metadata_options {
-    http_tokens = "required"
-  }
+#  metadata_options {
+#    http_tokens = "required"
+#  }
   
-  root_block_device {
-    encrypted = true
-  }
+#  root_block_device {
+#    encrypted = true
+#  }
   
   ebs_optimized = true
   
