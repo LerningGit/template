@@ -1,0 +1,24 @@
+name: Include Log Workflows
+
+on: [pull_request]
+#  push:
+#    branches:
+#      - main
+
+jobs:
+  include-workflows:
+    name: Include Source Repository Workflows
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Repository
+        uses: actions/checkout@v2
+        with:
+          repository: LerningGit/github_actions
+#          ref: test-12
+
+      - name: Include Workflow 1
+        uses: ./.github/workflows/pull-request-size.yml
+
+      - name: Include Workflow 2
+        uses: ./.github/workflows/auto-commits.yml
