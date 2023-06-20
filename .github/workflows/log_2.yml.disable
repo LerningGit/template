@@ -3,8 +3,7 @@ name: Include LOG2 Workflows
 on:
   workflow_run:
     workflows:
-      - 'Workflow 1'
-      - 'Workflow 2'
+      - 'action_gcp.yml'
     types:
       - completed
 
