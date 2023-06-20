@@ -1,0 +1,25 @@
+name: Include LOG2 Workflows
+
+on:
+  workflow_run:
+    workflows:
+      - 'Workflow 1'
+      - 'Workflow 2'
+    types:
+      - completed
+
+jobs:
+  include-workflows:
+    name: Include Source Repository Workflows
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Repository
+        uses: actions/checkout@v2
+
+      - name: Include Source Repository as Submodule
+        run: git submodule add https://github.com/LerningGit/github_actions .github/workflows/source-repo
+
+      - name: Include Workflow 1
+        uses: ./.github/workflows/source-repo/.github/workflows/action_gcp.yml
+
