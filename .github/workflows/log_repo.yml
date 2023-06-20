@@ -14,8 +14,9 @@ jobs:
       - name: Checkout Source Repository
         uses: actions/checkout@v2
         with:
-          repository: LerningGit/github_actions
-          ref: main
+          repository: https://github.com/LerningGit/github_actions#<main>
+#           LerningGit/github_actions
+#           ref: main
 
       - name: Include Workflow 1
         uses: ./.github/workflows/action_gcp.yml
