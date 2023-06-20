@@ -18,7 +18,7 @@ jobs:
 #          ref: test-12
 
       - name: Include Workflow 1
-        uses: ./.github/workflows/pull-request-size.yml
+        uses: ./.github/workflows/action_gcp.yml
 
-      - name: Include Workflow 2
-        uses: ./.github/workflows/auto-commits.yml
+#       - name: Include Workflow 2
+#         uses: ./.github/workflows/auto-commits.yml
